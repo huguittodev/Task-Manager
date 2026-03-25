@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { TaskValues } from "./types/taskValues";
 import Task from "./components/Task";
+import Stats from "./components/Stats";
 
 export default function App() {
   // 1. ESTADO: Inicializamos leyendo de LocalStorage
@@ -35,7 +36,7 @@ export default function App() {
         priority,
         createdAt: Date.now(),
       },
-      ...prev, // Siempre añadimos al principio
+      ...prev,
     ]);
     setNewTask("");
   };
@@ -73,7 +74,7 @@ export default function App() {
     );
   };
 
-  // 4. ESTADO DERIVADO (El truco maestro para filtrar sin romper nada)
+  // 4. ESTADO DERIVADO
   const filteredAndSortedTasks = tasks
     .filter((task) => {
       if (filterCompletedValue === "completadas") return task.completed;
@@ -101,6 +102,9 @@ export default function App() {
             Organiza tus metas con precisión
           </p>
         </header>
+
+        {/* 5. ESTADÍSTICAS */}
+        <Stats tasks={tasks} />
 
         {/* Añadir Tarea */}
         <form
@@ -165,7 +169,7 @@ export default function App() {
           </button>
         </div>
 
-        {/* Lista (Renderizamos la variable derivada, NO el estado 'tasks') */}
+        {/* Lista */}
         <div className="space-y-4">
           {filteredAndSortedTasks.length === 0 ? (
             <div className="text-center py-20 border-2 border-dashed border-slate-800 rounded-3xl text-slate-600">

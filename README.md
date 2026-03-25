@@ -9,6 +9,8 @@
 
 > **💡 Nota:** Puedes ver el proyecto en vivo aquí: [https://task-manager-brown-seven-65.vercel.app/]
 
+![CAP TASK MANAGER](/src/assets/CAP%20TASK%20MANAGER.png)
+
 ---
 
 ## ✨ Características Principales

@@ -90,7 +90,7 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-[#09090b] text-zinc-200 font-sans selection:bg-zinc-700">
-      <div className="max-w-4xl mx-auto pt-20 px-6 pb-20">
+      <div className="max-w-4xl mx-auto pt-20 px-6">
         {/* Header*/}
         <header className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-zinc-800 pb-8">
           <div>
